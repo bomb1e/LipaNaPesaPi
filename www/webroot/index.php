@@ -1,7 +1,8 @@
 <?php
 namespace Pluspeople\Pesapi;
-set_include_path("/include:" . get_include_path());
-require_once("/include/PLUSPEOPLE/autoload.php");
+$path = 'F:\Dropbox\Projects\LipaNaPesaPi\pesaPi\php\include';
+set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+require_once("F:\Dropbox\Projects\LipaNaPesaPi\pesaPi\php\include\PLUSPEOPLE\autoload.php");
 
 
 class configtool extends \PLUSPEOPLE\SlowTemplate\Template {

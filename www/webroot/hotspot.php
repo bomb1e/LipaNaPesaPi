@@ -51,15 +51,15 @@ function test_input($data) {
 	<div div id="logo" style="width:630px; margin:0 auto;">
 	<h1> Welcome to Syokinet Prepaid Hotspot</h1><br>
 	<h2> Select package</h2><br>
-	<form method= "post" action= "buy.php">
+	<form method= "post" action= "buy2.php">
 	<span class="error">* required field.</span><br><br>
 	</div>
 	
 	<div div id="content" style="background-color:#EEEEEE;width:630px;margin:0 auto;">
 	Package:<br><br>
 	<input type=radio name="package"  value="20000">Ksh 200 per day<br><br>
-	<input type=radio name="package" value="weekly">ksh 1000 per week<br><br>
-	<input type=radio name="package" value="monthly">ksh 3000 per month<br><br>
+	<input type=radio name="package" value="100000">ksh 1000 per week<br><br>
+	<input type=radio name="package" value="300000">ksh 3000 per month<br><br>
 	Name:  <input type="text" name="name" >
 			<span class="error">* <?php echo $nameErr;?></span><br><br>
 	Email: <input type="text" name="email">
