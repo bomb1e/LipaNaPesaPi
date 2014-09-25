@@ -11,6 +11,7 @@ $pesa = new PLUSPEOPLE\PesaPi\PesaPi();
 //retrieve the package chosen from the hostpot.php page
 if (isset($_POST["package"])) {
 	$package_amount = $_POST["package"];
+	echo "$package_amount";
 }
 //draw the receipt input box
 ?>
@@ -45,17 +46,20 @@ if (isset($_POST["receipt"])) {
 				$ticket_query = "SELECT ticketnumber from issue_ticket
 									WHERE issue_ticket.issue = 0";
 				$username = mysqli_query($con,$ticket_query);
-				$num = mysqli_num_rows($username);
-				$ticket_number = mysqli_result($username,$num[1],"issue");
-				//set ticket as used
-				$set_used_query = "UPDATE issue_ticket SET issue_ticket.issue = 1 
-									WHERE ticketnumber = $username";
+				$username2 = mysqli_fetch_array($username,MYSQLI_NUM);
 
-			//give username and password if it does						
+				//$num = mysqli_num_rows($username);
+				//$ticket_number = mysqli_result($username,$num[1],"issue");
+				$ticket_number = $username2[0];
+				//set ticket as used
+				$set_used_query = "UPDATE issue_ticket SET issue_ticket.issue = 1 , issue_ticket.date_of_issue = CURRENT_TIMESTAMP
+									WHERE ticketnumber = $ticket_number";
+				$set_used = mysqli_query($con,$set_used_query);
+				//give username and password if it does						
 ?>
 				<html>
 				<body> 
-					<input id = "username" name = "username" value = "<?php echo "ticket_number";
+					<input id = "username" name = "username" value = "<?php echo "$ticket_number";
 					// while($row = mysqli_fetch_array($username)) { echo $row['ticketnumber'];}
 					?>"><br>
 				</body>
