@@ -1,3 +1,6 @@
+<?php
+ session_start();
+?>
 <html>
 	<head>
 	<title> Welcome to Syokinet Prepaid Hotspot </title>
@@ -51,7 +54,7 @@ function test_input($data) {
 	<div div id="logo" style="width:630px; margin:0 auto;">
 	<h1> Welcome to Syokinet Prepaid Hotspot</h1><br>
 	<h2> Select package</h2><br>
-	<form method= "post" action= "buy2.php">
+	<form method= "POST" action= "buy2.php">
 	<span class="error">* required field.</span><br><br>
 	</div>
 	
@@ -69,6 +72,13 @@ function test_input($data) {
 	<input type=submit name="Continue" value="Continue...">
 	</form> 
 	</div>
-	
+	<?php
+	//SET SESSION VARIABLES
+	$_SESSION["package"] = "package";
+	$_SESSION["name"] = "name";
+	$_SESSION["email"] = "email";
+	$_SESSION["phone"] = "phone";
+	?>
+	</body>
  
 </html>
