@@ -31,11 +31,11 @@ if (isset($_POST["package"])) {
 <?php
 //check whether the receipt matches with database and conforms with the selected package
 if (isset($_POST["receipt"])) {
-	$transactions = $pesa->locateByReceipt($_POST["receipt"],"9876");
+	$transactions = $pesa->locateByReceipt($_POST["receipt"],"");
 		if (count($transactions)>0) {
 			//connect to ticket database & give username and password based on the chosen package
-			$con = mysqli_connect('localhost','root','','tickets');
-			$con2 = mysqli_connect('localhost','root','','mpesaapi');
+			$con = mysqli_connect('localhost','root','','');
+			$con2 = mysqli_connect('localhost','root','','');
 			//check connection
 			if (mysqli_connect_errno()) {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();	

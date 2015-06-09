@@ -31,7 +31,7 @@ if (isset($_POST["receipt"])) {
 </html>
 <?php
 	//connect to ticket database & give username and password based on the chosen package
-	$con = mysqli_connect('localhost','root','','tickets');
+	$con = mysqli_connect('localhost','root','','');
 	//check connection
 		if (mysqli_connect_errno()) {
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();	
